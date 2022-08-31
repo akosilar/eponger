@@ -14,3 +14,22 @@ mongoose
     }).catch((e)=>{
         console.log("Error:", e);
     });
+
+    
+main().catch(err => console.log(err));
+
+async function main() {
+    const Player = mongoose.model("Player",{lName: String, fName: String, rating: Number, email: String});
+
+    const lars = new Player({lname: 'austero', fname: 'lars', rating: 1400, email: 'janlarsaustero@gmail.com'});
+    await lars.save().then(() => console.log('player entered'));
+    const result = await Player.find({email:'janlarsaustero@gmail.com'});
+    console.log(result);
+
+    
+    
+}
+    
+
+
+process.exit(-1);
