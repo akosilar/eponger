@@ -1,6 +1,28 @@
 const mongoose = require("mongoose");
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({extended: true}));
 
 const dbURL = "mongodb+srv://root:kp9pwxnbx7ahANPhhYLD@cluster0.1e4lsm5.mongodb.net/ePonger?retryWrites=true&w=majority";
+
+//create a data model
+
+const Player = mongoose.model("Player",{lName: String, fName: String, rating: Number, email: String});
+
+
+
+app.get("/", function(req, res) {
+    res.send("express is working")
+})
+
+//app.post
+app.listen(3000, function() {
+    console.log("server is running on 3000");
+})
+
+/*
 
 const connectionParams = {
         useNewUrlParser: true,
@@ -29,7 +51,4 @@ async function main() {
     
     
 }
-    
-
-
-process.exit(-1);
+*/
