@@ -17,14 +17,26 @@ app.set('view engine', 'ejs');
 //listen for requests moved to inside the mongoose.connect after a successful db connection
 // app.listen(3000);
 
+//ePonger routes
 app.get('/', (req,res) => {
     // res.sendFile('./client/index.html', {root: "../"});
-    res.render('index', {title: 'ePonger'});
+    res.render('index', {title: 'Home'});
 });
 
 //redirect from home
 app.get('/home', (req,res) => {
     res.redirect('/');
+});
+
+//go to player list
+app.get('/players', (req,res) => {
+    // res.sendFile('./client/index.html', {root: "../"});
+    res.render('players', {title: 'Player List'});
+});
+
+//go to add players
+app.get('/addPlayer', (req,res) => {
+    res.render('addPlayer', {title: 'Add Player'});
 });
 
 //404

@@ -1,28 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ePonger</title>
-</head>
+<%- include('./partials/head.ejs') %> 
 <body>
-    <nav>
-        <div class="site-title">
-            <a href="/"><h1>ePonger</h1></a>
-            <p>Player Rating Software</p>
-        </div>
-        <ul>
-            <li><a href="/">ePonger</a></li>
-            <li><a href="/addPlayer">New Player</a></li>
-            <li><a href="/players">Player list</a></li>
-        </ul>
-    </nav>
-    <form id="player-form">
-        <label for="first name">First Name</label>
-        <input type ="text" name="who">
-        <label for="last name">Last Name</label>
-        <input type ="text" name="who">
-    </form>
+    <%- include('./partials/nav.ejs') %> 
 </body>
 </html>
