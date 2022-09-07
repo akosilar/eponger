@@ -41,5 +41,6 @@ app.get('/addPlayer', (req,res) => {
 
 //404
 app.use((req,res) => {
-    res.status(404).sendFile('./client/404.html', {root: "../"});
+    // res.status(404).sendFile('./client/404.html', {root: "../"});
+    res.status(404).render('404', {title: 404});
 });
