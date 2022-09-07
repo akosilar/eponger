@@ -2,6 +2,22 @@
 <html lang="en">
     <%- include('./partials/head.ejs') %> 
 <body>
-        <%- include('./partials/nav.ejs') %> 
+    <%- include('./partials/nav.ejs') %> 
+
+    <div class="players content">
+        <h2>All Players</h2>
+
+        <% if (players.length >0) { %>
+            <% players.forEach(players => { %>
+                <p><%= players.firstname %> <p> 
+                <p><%= players.lastname %> <p> 
+                <p><%= players.email %> <p>  
+                <p><%= players.rating %> <p>    
+            <% }) %> 
+            <% } else { %> 
+                <p>There are no blogs to display.</p>
+            <% } %> 
+    </div>
 </body>
+<%- include('./partials/footer.ejs') %> 
 </html>

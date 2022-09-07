@@ -15,7 +15,10 @@ const playerSchema = new Schema({
         required: true
     },
     rating: {
-        type: String,
+        type: Number,
         required: true
     }
 }, {timestamps: true});
+
+const Player = mongoose.model('Player', playerSchema);
+module.exports = Player;
