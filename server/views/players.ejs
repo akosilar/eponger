@@ -9,10 +9,12 @@
 
         <% if (players.length >0) { %>
             <% players.forEach(players => { %>
+                <a class="single" href="/players/<%= players._id %>">
+                <h3><%= players.email %> </h3>
                 <p><%= players.firstname %> <p> 
                 <p><%= players.lastname %> <p> 
-                <p><%= players.email %> <p>  
-                <p><%= players.rating %> <p>    
+                <p><%= players.rating %> <p>
+                </a>     
             <% }) %> 
             <% } else { %> 
                 <p>There are no blogs to display.</p>

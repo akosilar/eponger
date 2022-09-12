@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const Player = require('./models/players');
-
+const playerRoutes = require('./routes/playerRoutes');
 
 //express app
 const app = express();
@@ -20,34 +19,14 @@ app.set('view engine', 'ejs');
 //middleware & static files. Anything in the public folder will be accessible. No ned toe specify the path.
 app.use(express.static('public'));
 
-//ePonger routes
+//to accept form data
+app.use(express.urlencoded({ extended: true})); 
+
 app.get('/', (req,res) => {
-    // res.sendFile('./client/index.html', {root: "../"});
-    res.render('index', {title: 'Home'});
+    res.redirect('/players');
 });
 
-//redirect from home
-app.get('/home', (req,res) => {
-    res.redirect('/');
-});
-
-//go to player list
-app.get('/players', (req,res) => {
-    // res.sendFile('./client/index.html', {root: "../"});
-    // res.render('players', {title: 'Player List'});
-    Player.find().sort({ createdAt: -1})
-        .then((result) => {
-            res.render('players', {title: 'Player List', players: result})
-        })
-        .catch((err) => {
-            console.log(err);
-        })
-});
-
-//go to add players
-app.get('/addPlayer', (req,res) => {
-    res.render('addPlayer', {title: 'Add a new Player'});
-});
+app.use('/players', playerRoutes);
 
 //404
 app.use((req,res) => {

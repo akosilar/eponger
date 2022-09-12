@@ -5,15 +5,15 @@
     <%- include('./partials/nav.ejs') %> 
 
     <div class="create-player content">
-        <form>
+        <form action="/players" method= "POST">
             <label for="first name">First Name:</label>
-            <input type="text" id="firstName" required>
+            <input type="text" id="firstName" name ="firstName" required>
             <label for="last name">Last Name:</label>
-            <input type="text" id="lastName" required>
+            <input type="text" id="lastName" name="lastName"  required>
             <label for="email">eMail:</label>
-            <input type="text" id="email" required>
+            <input type="text" id="email" name="email"  required>
             <label for="rating">Rating:</label>
-            <input type="number" id="rating" required>
+            <input type="number" id="rating" name="rating"  required>
             <button>Submit</button>
         </form>
     </div>
