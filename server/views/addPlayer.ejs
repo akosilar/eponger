@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %> 
+<body>
+    <%- include('./partials/nav.ejs') %> 
+
+    <div class="create-player content">
+        <form action="/players" method= "POST">
+            <label for="first name">First Name:</label>
+            <input type="text" id="firstName" name ="firstName" required>
+            <label for="last name">Last Name:</label>
+            <input type="text" id="lastName" name="lastName"  required>
+            <label for="email">eMail:</label>
+            <input type="text" id="email" name="email"  required>
+            <label for="rating">Rating:</label>
+            <input type="number" id="rating" name="rating"  required>
+            <button>Submit</button>
+        </form>
+    </div>
+        
+</body>
+    <%- include('./partials/footer.ejs') %> 
+</html>
