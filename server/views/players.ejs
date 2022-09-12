@@ -10,10 +10,10 @@
         <% if (players.length >0) { %>
             <% players.forEach(players => { %>
                 <a class="single" href="/players/<%= players._id %>">
-                <h3><%= players.email %> </h3>
-                <p><%= players.firstname %> <p> 
-                <p><%= players.lastname %> <p> 
-                <p><%= players.rating %> <p>
+                <h3 class="title"><%= players.email %> </h3>
+                <p><%= players.firstname %> </p> 
+                <p><%= players.lastname %> </p> 
+                <p><%= players.rating %> </p>
                 </a>     
             <% }) %> 
             <% } else { %> 
