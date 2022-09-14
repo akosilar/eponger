@@ -1,7 +1,7 @@
 # eponger
  
 ```cd into eponger\server
- run npm init
-run npm install
-run nodemon app
+npm init
+npm install
+npx nodemon app
 on a browser, go to localhost:4000
