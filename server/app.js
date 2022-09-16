@@ -1,12 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const playerRoutes = require('./routes/playerRoutes');
+require('dotenv').config();
 
 //express app
 const app = express();
 
 //connect to mongoDB
-const dbURI = 'mongodb+srv://root:kp9pwxnbx7ahANPhhYLD@cluster0.1e4lsm5.mongodb.net/ePonger?retryWrites=true&w=majority';
+const dbURI = process.env.dbURI;
 mongoose.connect(dbURI)
     .then((result) => app.listen (4000))
     .catch((err) => console.log(err));
