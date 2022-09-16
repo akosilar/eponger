@@ -5,11 +5,12 @@ require('dotenv').config();
 
 //express app
 const app = express();
+const port = process.env.PORT || 4000
 
 //connect to mongoDB
 const dbURI = process.env.dbURI;
 mongoose.connect(dbURI)
-    .then((result) => app.listen (4000))
+    .then((result) => app.listen (port))
     .catch((err) => console.log(err));
 //register view engine
 app.set('view engine', 'ejs');
