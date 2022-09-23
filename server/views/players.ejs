@@ -3,7 +3,13 @@
     <%- include('./partials/head.ejs') %> 
 <body>
     <%- include('./partials/nav.ejs') %> 
-
+    <div>
+        <h2>Player search</h2>
+        <form action="/players/search" method="GET">
+            <input type="text" name="playerSearch" placeholder="Name, email">
+            <button>Search</button>
+        </form>
+    </div>
     <div class="players content">
         <h2>All Players</h2>
 

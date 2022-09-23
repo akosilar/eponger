@@ -49,10 +49,25 @@ const player_delete = (req,res) => {
         })
 }
 
+const player_search = (req,res) => {
+    const search2 = req.query["playerSearch"];
+    // console.log(req);
+    // res.json(search2);
+
+    Player.find({ firstName: search2})
+        .then((result) => {
+            res.render('details', {player: result[0], title: 'Player Details'});
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+}
+
 module.exports = {
         player_index,
         player_details,
         player_addPlayer_get,
         player_addPlayer_post,
-        player_delete
+        player_delete,
+        player_search
 }

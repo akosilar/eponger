@@ -5,6 +5,7 @@ const playerController = require('../controllers/playerController');
 const router = express.Router();
 
 //player routes
+router.get('/search', playerController.player_search);
 router.get('/addPlayer', playerController.player_addPlayer_get);
 router.get('/', playerController.player_index);
 router.post('/', playerController.player_addPlayer_post);
