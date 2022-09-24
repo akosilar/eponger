@@ -55,12 +55,18 @@ const player_search = (req,res) => {
     // res.json(search2);
 
     Player.find({ firstName: search2})
-        .then((result) => {
+    .then((result) => {
+        if(result.length != 0) {
             res.render('details', {player: result[0], title: 'Player Details'});
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+        } else {
+            res.render('404', {error: 'No player', title: 'no player found'})
+        }
+    })
+    .catch((err) => {
+        res.render('404', {error: 'No player', title: 'This shit broooke'});
+        console.log(err)
+    })
+    
 }
 
 module.exports = {

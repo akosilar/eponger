@@ -20,5 +20,6 @@ const playerSchema = new Schema({
     }
 }, {timestamps: true});
 
+
 const Player = mongoose.model('Player', playerSchema);
 module.exports = Player;

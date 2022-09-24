@@ -33,5 +33,5 @@ app.use('/players', playerRoutes);
 //404
 app.use((req,res) => {
     // res.status(404).sendFile('./client/404.html', {root: "../"});
-    res.status(404).render('404', {title: 404});
+    res.status(404).render('404', {error: 'page not found', title: 404});
 });
