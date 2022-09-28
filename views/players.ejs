@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head.ejs') %> 
-<body>
-    <%- include('./partials/nav.ejs') %> 
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
     <div>
-        <h2>Player search</h2>
-        <form action="/players/search" method="GET">
-            <input type="text" name="playerSearch" placeholder="Name, email">
-            <button>Search</button>
-        </form>
+      <h2>Player search</h2>
+      <form action="/players/search" method="GET">
+        <input type="text" name="playerSearch" placeholder="Name, email" />
+        <button>Search</button>
+      </form>
     </div>
     <div class="players content">
-        <h2>All Players please change</h2>
+      <h2>All Players</h2>
 
-        <% if (players.length >0) { %>
-            <% players.forEach(players => { %>
-                <a class="single" href="/players/<%= players._id %>">
-                <h3 class="title"><%= players.email %> </h3>
-                <p><%= players.firstname %> </p> 
-                <p><%= players.lastname %> </p> 
-                <p><%= players.rating %> </p>
-                </a>     
-            <% }) %> 
-            <% } else { %> 
-                <p>There are no players at this time.</p>
-            <% } %> 
+      <% if (players.length >0) { %> <% players.forEach(players => { %>
+      <a class="single" href="/players/<%= players._id %>">
+        <h3 class="title"><%= players.email %></h3>
+        <p><%= players.firstname %></p>
+        <p><%= players.lastname %></p>
+        <p><%= players.rating %></p>
+      </a>
+      <% }) %> <% } else { %>
+      <p>There are no players at this time.</p>
+      <% } %>
     </div>
-</body>
-<%- include('./partials/footer.ejs') %> 
+  </body>
+  <%- include('./partials/footer.ejs') %>
 </html>
