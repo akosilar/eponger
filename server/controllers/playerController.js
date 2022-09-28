@@ -57,7 +57,8 @@ const player_search = (req,res) => {
     Player.find({ firstName: search2})
     .then((result) => {
         if(result.length != 0) {
-            res.render('details', {player: result[0], title: 'Player Details'});
+            // console.log(result);
+            res.render('playerSearchList', {title: 'Player Search List', players: result})
         } else {
             res.render('404', {error: 'No player', title: 'no player found'})
         }
