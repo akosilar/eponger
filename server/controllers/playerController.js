@@ -54,7 +54,12 @@ const player_search = (req,res) => {
     // console.log(req);
     // res.json(search2);
 
-    Player.find({ firstName: search2})
+    Player.find({ 
+        $or: [
+            {lastName: search2},
+            {firstName: search2}
+        ]
+    })
     .then((result) => {
         if(result.length != 0) {
             // console.log(result);
